@@ -1,0 +1,12 @@
+version: '2'
+# define all services
+services:
+  # our service is called laravel ;-)
+  laravel:
+    # we want to use the image which is build from our Dockerfile
+    build: .
+    # apache is running on port 80 but we want to expose this to port 8080 on our local machine
+    ports:
+      - "8080:80"
+volumes:
+    db_data:
