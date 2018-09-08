@@ -62,10 +62,11 @@ php artisan serve --port=8080 --host=YOUR_IP
 
 ### Docker installation
 Git <Br>
-Docker 
+Docker<br>
+
 Install Git following these instructions 
 ```
-# https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 ```
 Install Docker following these instructions 
 ```
