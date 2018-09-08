@@ -17,7 +17,14 @@ window.Vue = require('vue');
 
 //import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
+import VueContentPlaceholders from 'vue-content-placeholders'
+import VueProgressiveImage from 'vue-progressive-image'
+
 Vue.use(BootstrapVue);
+Vue.use(VueContentPlaceholders);
+Vue.use(VueProgressiveImage);
+
+
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 

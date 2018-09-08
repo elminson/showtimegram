@@ -21,25 +21,30 @@
             <form @submit.stop.prevent="handleSubmit">
                 <div class="card-body">
                     <div class="row">
-                        <b-form-input placeholder="Username" class="form-control" type="text"
-                                      v-model="username"></b-form-input>
-                        <b-form-input placeholder="Caption" class="form-control" type="text"
-                                      v-model="caption"></b-form-input>
+                        <b-form-input required placeholder="Username" class="form-control mt-3" type="text"
+                                      v-model="username" :state="Boolean(username)"></b-form-input>
+                        <b-form-input required placeholder="Caption" class="form-control mt-3" type="text"
+                                      v-model="caption" :state="Boolean(caption)"></b-form-input>
+                    </div>
+                    <div v-if="image" style="margin-top:10px;">
+                    <center>
+                        <img :src="image" class="rounded" height="120">
+                    </center>
+                    </div>
+                    <div v-else  style="margin-top:10px;">
+                    <center>
+                        <b-img rounded blank width="120" height="120" blank-color="#777" alt="img" class="m-1" />
+                    </center>
                     </div>
                     <div class="row">
-                        <div class="col-md-3" v-if="image">
-                            <img :src="image" class="img-responsive form-control" height="70" width="90">
-                        </div>
+                          <b-form-file required v-model="image" accept="image/*" :state="Boolean(image)" v-on:change="onImageChange" placeholder="Choose a file..." class="mt-3"></b-form-file>
+
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <input type="file" v-on:change="onImageChange" class="form-control form-control">
-                        </div>
-                        <div class="col-md-3">
+                    <div class="mt-3">
                             <button class="form-control btn btn-success btn-block" @click="uploadImage">Upload Image
                             </button>
-                        </div>
                     </div>
+                    
                 </div>
 
 
@@ -50,12 +55,14 @@
         <slot :result="getResult()">
             <div class="text-center center pb-3">
             <span v-if="!loading">
+
                   <b-card v-for="(item,key) in result" :key=item.id
                           img-alt="Image"
                           img-top
                           tag="div"
                           class=" post-image mb-2 default-size-items center text-center">
-                      <img :src=item.image_name class="img-fluid">
+
+                      <progressive-img :src=item.image_name class="img-fluid" placeholder="https://unsplash.it/1920/1080?image=10" />
                         <p class="card-text">
                             <h4 class="card-title text-left text-color">by: {{item.username}}</h4>
                       </p>
@@ -77,7 +84,17 @@
                 
             </span>
                 <span v-if="loading">
-                Loading...
+                 <b-card v-for="(item,key) in result_placeholder" :key=item.id
+                          img-alt="Image"
+                          img-top
+                          tag="div"
+                          class=" post-image mb-2 default-size-items center text-center">
+                        <content-placeholders :rounded="true">
+                            <content-placeholders-img />
+                            <content-placeholders-text :lines="3" />
+                            <content-placeholders-heading />
+                        </content-placeholders>
+                </b-card>
                 </span>
             </div>
         </slot>
@@ -152,6 +169,7 @@ export default {
         prevPageUrl: null,
         prependData: null,
         appendData: null,
+        result_placeholder: null,
         id:    '',
         username: '',
         caption: '',
@@ -188,6 +206,7 @@ export default {
                 // assigne next and prev page url
                 vm.nextPageUrl = res.data.next_page_url;
                 vm.prevPageUrl = res.data.prev_page_url;
+                vm.result_placeholder = res.data.per_page;
             }).catch((err) => {
                 vm.loading = false;
             })
@@ -219,6 +238,7 @@ export default {
                 reader.readAsDataURL(file);
         },
         uploadImage(){
+            if(this.username != '' && this.caption != '' && this.image != '' ){
                 axios.post('/image/store',{username: this.username, caption: this.caption, image: this.image, _token :   this.token}).then(response => {
                    if (response.data.success) {
                      this.fetchData('/api/v1/posts');
@@ -227,6 +247,7 @@ export default {
                      alert(response.data.success);
                    }
                 });
+            }
         },
         deleteImage(index){
                 axios.post('/image/destroy',{id: this.result[index].id, _token :   this.token}).then(response => {
