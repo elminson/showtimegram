@@ -1,6 +1,4 @@
-# Showtimegram
-
-# Project showtimegram 
+# Project Showtimegram 
 
 The Goal:
 For this homework we are having you build out a mini Instagram called showtimegram.
