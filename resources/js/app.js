@@ -21,8 +21,6 @@ Vue.use(BootstrapVue);
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
-Vue.component('image-component', require('./components/ImageuploadComponent.vue'));
 Vue.component('simple-pagination', require('./components/SimplePagination.vue'));
 
 const app = new Vue({
