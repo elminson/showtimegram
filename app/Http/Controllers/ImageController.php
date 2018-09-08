@@ -37,18 +37,20 @@ class ImageController extends Controller
     }
 
 
-
     public function store(Request $request)
     {
 
         if ($request->get('image')) {
             $image = $request->get('image');
+            $image = $this->imageData($image);
             $username = $request->get('username');
             $caption = $request->get('caption');
-            $name = time() . '.' . explode('/', explode(':', substr($image, 0, strpos($image, ';')))[1])[1];
+            $name = time() . '.' . $image['type'];
             $image_name = $this->generateRandomString() . "_" . $name;
-            \Image::make($request->get('image'))->save(public_path($this->path) . "/" . $image_name);
+            //Bug find "Laravel : Unable to init from given binary data. #634"
+            //\Image::make($request->get('image'))->save(public_path($this->path) . "/" . $image_name);
 
+            file_put_contents(public_path($this->path) . "/" . $image_name, $image['data']);
             $post = new Post();
             $post->username = $username;
             $post->caption = $caption;
@@ -73,4 +75,27 @@ class ImageController extends Controller
         return $randomString;
     }
 
+    public function imageData($data)
+    {
+        if (preg_match('/^data:image\/(\w+);base64,/', $data, $type)) {
+            $data = substr($data, strpos($data, ',') + 1);
+            $type = strtolower($type[1]); // jpg, png, gif
+
+            if (!in_array($type, ['jpg', 'jpeg', 'gif', 'png'])) {
+                throw new \Exception('invalid image type');
+            }
+
+            $data = base64_decode($data);
+
+            if ($data === false) {
+                throw new \Exception('base64_decode failed');
+            }
+        } else {
+            throw new \Exception('did not match data URI with image data');
+        }
+
+        return ['type' => $type, 'data' => $data];
+    }
+
 }
+
