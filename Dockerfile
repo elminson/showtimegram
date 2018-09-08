@@ -9,9 +9,17 @@ RUN apt-get update && apt-get install -y \
       git \
       zip \
       unzip \
+      libpng-dev \
+      libjpeg-dev \
+      libjpeg62-turbo-dev \
+      sqlite3 \
+      libsqlite3-dev \
     && rm -r /var/lib/apt/lists/* \
-    && docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \
-    && docker-php-ext-install \
+    && docker-php-ext-configure gd \
+        --with-gd \
+        --with-png-dir=/usr/include/ \
+        --with-jpeg-dir=/usr/include/ \
+     && docker-php-ext-install \
       intl \
       mbstring \
       mcrypt \
@@ -47,8 +55,9 @@ RUN composer install --no-interaction
 
 #change ownership of our applications
 RUN chown -R www-data:www-data $APP_HOME
-RUN chmod 777 $APP_HOME/images
+RUN chmod 777 $APP_HOME/public/images
 RUN php artisan key:generate
+RUN php artisan migrate
 RUN npm rebuild node-sass
 RUN npm install && npm run dev
 
