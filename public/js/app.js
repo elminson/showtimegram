@@ -64467,525 +64467,21 @@ exports.push([module.i, ".fade-enter-active, .fade-leave-active {\n    transitio
 
 /***/ }),
 /* 220 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-var disposed = false
-var normalizeComponent = __webpack_require__(36)
-/* script */
-var __vue_script__ = __webpack_require__(221)
-/* template */
-var __vue_template__ = __webpack_require__(222)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/components/ExampleComponent.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-299e239e", Component.options)
-  } else {
-    hotAPI.reload("data-v-299e239e", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
+throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/root/showtimegram/showtimegram/resources/js/components/ExampleComponent.vue'");
 
 /***/ }),
-/* 221 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('Component mounted.');
-    }
-});
-
-/***/ }),
-/* 222 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card card-default" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
-            ])
-          ])
-        ])
-      ])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-299e239e", module.exports)
-  }
-}
-
-/***/ }),
+/* 221 */,
+/* 222 */,
 /* 223 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-var disposed = false
-var normalizeComponent = __webpack_require__(36)
-/* script */
-var __vue_script__ = __webpack_require__(224)
-/* template */
-var __vue_template__ = __webpack_require__(225)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/components/ImageuploadComponent.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-eb9b44a8", Component.options)
-  } else {
-    hotAPI.reload("data-v-eb9b44a8", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
+throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/root/showtimegram/showtimegram/resources/js/components/ImageuploadComponent.vue'");
 
 /***/ }),
-/* 224 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-var _name$data$data$creat;
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-var csrf_token = $('meta[name="csrf-token"]').attr('content');
-var apiURL = '/api/v1/posts';
-/* harmony default export */ __webpack_exports__["default"] = (_name$data$data$creat = {
-    name: 'image-component',
-    data: function data() {
-        return {
-            id: '',
-            username: '',
-            caption: '',
-            image: '',
-            token: csrf_token,
-            items: null,
-            pagination: {}
-        };
-    }
-}, _defineProperty(_name$data$data$creat, 'data', {
-    pagination: {}
-}), _defineProperty(_name$data$data$creat, 'created', function created() {
-    this.fetchData();
-}), _defineProperty(_name$data$data$creat, 'ready', function ready() {
-    this.fetchStories();
-}), _defineProperty(_name$data$data$creat, 'methods', {
-    onImageChange: function onImageChange(e) {
-        var files = e.target.files || e.dataTransfer.files;
-        if (!files.length) return;
-        this.createImage(files[0]);
-    },
-    createImage: function createImage(file) {
-        var reader = new FileReader();
-        var vm = this;
-        reader.onload = function (e) {
-            vm.image = e.target.result;
-        };
-        reader.readAsDataURL(file);
-    },
-    uploadImage: function uploadImage() {
-        axios.post('/image/store', { username: this.username, caption: this.caption, image: this.image, _token: this.token }).then(function (response) {
-            if (response.data.success) {
-                alert(response.data.success);
-            } else {
-                alert(response.data.success);
-            }
-        });
-    },
-    deleteImage: function deleteImage() {
-        axios.post('/image/destroy', { id: this.id, _token: this.token }).then(function (response) {
-            if (response.data.success) {
-                alert(response.data.success);
-            } else {
-                alert(response.data.success);
-            }
-        });
-    },
-
-    fetchStories: function fetchStories(page_url) {
-        var vm = this;
-        page_url = page_url || '/api/v1/posts';
-        this.$http.get(page_url).then(function (response) {
-            vm.makePagination(response.data);
-            vm.$set('items', response.data.data);
-        });
-    },
-    fetchData: function fetchData() {
-        var self = this;
-        $.get(apiURL, function (data) {
-            self.items = data.data;
-        });
-    },
-    makePagination: function makePagination(data) {
-        var pagination = {
-            current_page: data.current_page,
-            last_page: data.last_page,
-            next_page_url: data.next_page_url,
-            prev_page_url: data.prev_page_url
-        };
-        this.$set('pagination', pagination);
-    }
-
-}), _name$data$data$creat);
-
-/***/ }),
-/* 225 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-md-8" }, [
-        _c("div", { staticClass: "card card-default" }, [
-          _c(
-            "div",
-            { staticClass: "card-body" },
-            _vm._l(_vm.items, function(item) {
-              return _c("div", { staticClass: "row" }, [
-                _c("img", {
-                  staticClass: "image-card",
-                  attrs: {
-                    src: "images/" + item.image_name,
-                    width: "600px",
-                    "img-alt": "Card image",
-                    "img-top": ""
-                  }
-                }),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text" }, [
-                  _vm._v("by: " + _vm._s(item.username))
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text" }, [
-                  _vm._v(_vm._s(item.caption))
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text" }, [
-                  _vm._v(_vm._s(item.created_at))
-                ]),
-                _vm._v(" "),
-                _c("p"),
-                _c("div", { staticClass: "col-md-3" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-block",
-                      on: { click: _vm.deleteImage }
-                    },
-                    [
-                      _c("i", { staticClass: "fas fa-trash-alt" }),
-                      _vm._v(" Delete ?")
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("p")
-              ])
-            })
-          )
-        ])
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-md-8" }, [
-        _c("div", { staticClass: "card card-default" }, [
-          _c("div", { staticClass: "card-header" }, [
-            _vm._v("File Upload Component")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.username,
-                    expression: "username"
-                  }
-                ],
-                attrs: { placeholder: "Username", type: "text" },
-                domProps: { value: _vm.username },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.username = $event.target.value
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.caption,
-                    expression: "caption"
-                  }
-                ],
-                attrs: { placeholder: "Caption", type: "text" },
-                domProps: { value: _vm.caption },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.caption = $event.target.value
-                  }
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
-              _vm.image
-                ? _c("div", { staticClass: "col-md-3" }, [
-                    _c("img", {
-                      staticClass: "img-responsive",
-                      attrs: { src: _vm.image, height: "70", width: "90" }
-                    })
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("input", {
-                  staticClass: "form-control",
-                  attrs: { type: "file" },
-                  on: { change: _vm.onImageChange }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-3" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-success btn-block",
-                    on: { click: _vm.uploadImage }
-                  },
-                  [_vm._v("Upload Image")]
-                )
-              ])
-            ])
-          ])
-        ])
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "pagination" }, [
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-default",
-          attrs: { disabled: !_vm.pagination.prev_page_url },
-          on: {
-            click: function($event) {
-              _vm.fetchStories(_vm.pagination.prev_page_url)
-            }
-          }
-        },
-        [_vm._v("\n            Previous\n            ")]
-      ),
-      _vm._v(" "),
-      _c("span", [
-        _vm._v(
-          "Page " +
-            _vm._s(_vm.pagination.current_page) +
-            " of " +
-            _vm._s(_vm.pagination.last_page)
-        )
-      ]),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-default",
-          attrs: { disabled: !_vm.pagination.next_page_url },
-          on: {
-            click: function($event) {
-              _vm.fetchStories(_vm.pagination.next_page_url)
-            }
-          }
-        },
-        [_vm._v("Next\n            ")]
-      )
-    ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-eb9b44a8", module.exports)
-  }
-}
-
-/***/ }),
+/* 224 */,
+/* 225 */,
 /* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -65459,6 +64955,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 var csrf_token = $('meta[name="csrf-token"]').attr('content');
 var apiURL = '/api/v1/posts';
@@ -65575,9 +65073,6 @@ var apiURL = '/api/v1/posts';
     deleteImage: function deleteImage(index) {
         var _this2 = this;
 
-        //console.log(this.result[index]).id
-        //console.log(this.result[index]);
-        //this.result[index].id
         axios.post('/image/destroy', { id: this.result[index].id, _token: this.token }).then(function (response) {
             if (response.data.success) {
                 _this2.fetchData('/api/v1/posts');
@@ -65707,15 +65202,17 @@ var render = function() {
                   _vm.image
                     ? _c("div", { staticClass: "col-md-3" }, [
                         _c("img", {
-                          staticClass: "img-responsive",
+                          staticClass: "img-responsive form-control",
                           attrs: { src: _vm.image, height: "70", width: "90" }
                         })
                       ])
-                    : _vm._e(),
-                  _vm._v(" "),
+                    : _vm._e()
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col-md-6" }, [
                     _c("input", {
-                      staticClass: "form-control",
+                      staticClass: "form-control form-control",
                       attrs: { type: "file" },
                       on: { change: _vm.onImageChange }
                     })
@@ -65725,7 +65222,7 @@ var render = function() {
                     _c(
                       "button",
                       {
-                        staticClass: "btn btn-success btn-block",
+                        staticClass: "form-control btn btn-success btn-block",
                         on: { click: _vm.uploadImage }
                       },
                       [_vm._v("Upload Image")]

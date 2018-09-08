@@ -29,13 +29,15 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-3" v-if="image">
-                                            <img :src="image" class="img-responsive" height="70" width="90">
+                                            <img :src="image" class="img-responsive form-control" height="70" width="90">
                                         </div>
+                                        </div>
+                                        <div class="row">
                                         <div class="col-md-6">
-                                            <input type="file" v-on:change="onImageChange" class="form-control">
+                                            <input type="file" v-on:change="onImageChange" class="form-control form-control">
                                         </div>
                                         <div class="col-md-3">
-                                            <button class="btn btn-success btn-block" @click="uploadImage">Upload Image</button>
+                                            <button class="form-control btn btn-success btn-block" @click="uploadImage">Upload Image</button>
                                         </div>
                                     </div>
                                 </div>
@@ -226,9 +228,6 @@ export default {
                 });
             },
             deleteImage(index){
-            //console.log(this.result[index]).id
-            //console.log(this.result[index]);
-            //this.result[index].id
                 axios.post('/image/destroy',{id: this.result[index].id, _token :   this.token}).then(response => {
                    if (response.data.success) {
                      this.fetchData('/api/v1/posts');
