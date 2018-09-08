@@ -105,8 +105,9 @@ $this->number_of_page = 2;
 
 * [Laravel](https://laravel.com/) - The PHP framework used
 * [React](https://reactjs.org/) - The frontend framework used
+* [Vuejs](https://vuejs.org) Vuejs
+* [Bootstrap-vue](https://bootstrap-vue.js.org/) Bootstrap-vue
 * [Docker](https://docker.com) - Used for containerization
-* [Html Template](https://colorlib.com) - Used as Template
 
 ## Screenshots
 ![Screenshot_1](https://github.com/elminson/showtimegram/blob/master/Screenshot_showtimegram.png)
