@@ -9,9 +9,12 @@ class ImageController extends Controller
 {
     protected $path;
 
+    protected $paginate;
+
     public function __construct()
     {
         $this->path = "images";
+	$this->paginate = 2;
     }
 
     public function index()
@@ -22,7 +25,8 @@ class ImageController extends Controller
     public function posts()
     {
         $posts = new Post();
-        return response()->json($posts->paginate(2));
+        return response()->json($posts->paginate($this->paginate));
+
     }
 
     public function destroy(Request $request)
