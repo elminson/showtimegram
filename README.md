@@ -92,7 +92,7 @@ http://127.0.0.1:8080/
 ## Tested
 The project was tested in a new droplet in Digital Ocean (https://digitalocean.com) following the "Installing and running
 " instructions. Droplet used <b>Ubuntu Docker 17.12.0~ce on 16.04 <b>
-    ![Screenshot_1](https://github.com/elminson/showtimegram/blob/master/Screenshot_showtimegram_docker.png)
+![Screenshot_showtimegram_3](https://github.com/elminson/showtimegram/blob/master/Screenshot_showtimegram_3.png)
 
 ## Configuration 
 Pagination is set to 2 items per page, you can change the number of items 
