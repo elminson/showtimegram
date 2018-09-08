@@ -33,6 +33,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 ```
+<b>Ubuntu Server 16.04</b>
 PHP7.1
 npm 5.03
 nodejs 8.x
