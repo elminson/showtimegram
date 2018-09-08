@@ -65033,7 +65033,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
 
 var csrf_token = $('meta[name="csrf-token"]').attr('content');
 var apiURL = '/api/v1/posts';
@@ -65467,9 +65466,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("content-placeholders-text", {
                               attrs: { lines: 3 }
-                            }),
-                            _vm._v(" "),
-                            _c("content-placeholders-heading")
+                            })
                           ],
                           1
                         )

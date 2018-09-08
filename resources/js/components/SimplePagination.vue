@@ -92,7 +92,6 @@
                         <content-placeholders :rounded="true">
                             <content-placeholders-img />
                             <content-placeholders-text :lines="3" />
-                            <content-placeholders-heading />
                         </content-placeholders>
                 </b-card>
                 </span>
