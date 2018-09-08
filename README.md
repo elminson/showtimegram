@@ -96,8 +96,10 @@ The project was tested in a new droplet in Digital Ocean (https://digitalocean.c
 
 ## Configuration 
 Pagination is set to 2 items per page, you can change the number of items 
+```
 file => app/Http/Controllers/ImageController.php
-$number_of_page = 2;
+$this->number_of_page = 2;
+```
 
 ## Built With
 
