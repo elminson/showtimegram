@@ -110,7 +110,10 @@ $this->number_of_page = 2;
 * [Docker](https://docker.com) - Used for containerization
 
 ## Screenshots
+http://127.0.0.1:8080
 ![Screenshot_1](https://github.com/elminson/showtimegram/blob/master/Screenshot_showtimegram.png)
+http://127.0.0.1:8080/newdesign
+![Screenshot_2](https://github.com/elminson/showtimegram/blob/master/Screenshot_15_new.png)
 
 ## Authors
 
