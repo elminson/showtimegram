@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Illuminate\Support\Facades\Storage;
+
 
 class ImageController extends Controller
 {
@@ -14,13 +17,45 @@ class ImageController extends Controller
     public function __construct()
     {
         $this->path = "images";
-	$this->paginate = 2;
+        $this->paginate = 2;
     }
 
     public function index()
     {
         return view('welcome');
     }
+
+    public function newDesign(Request $request)
+    {
+        $posts = new Post();
+        $data = $posts->paginate($this->paginate);
+        return view('new_design', ['data' => $data]);
+    }
+
+    public function postImage(Request $request)
+    {
+        $method = $request->method();
+        if ($method == 'POST') {
+            //var_dump($request->image);
+            $image = $request->get('image');
+            $username = $request->get('username');
+            $caption = $request->get('caption');
+            $name = time() . '.' . $request->image->getClientOriginalExtension();
+            $image_name = $this->generateRandomString() . "_" . $name;
+            $request->image->move(public_path($this->path) . "/", $image_name);
+            $post = new Post();
+            $post->username = $username;
+            $post->caption = $caption;
+            $post->image_name = $this->path . "/" . $image_name;
+            $post->save();
+            $request->session()->flash('message.level', 'success');
+            $request->session()->flash('message.content', 'Post was successfully added!');
+            return redirect('newdesign');//->with('success', 'Image posted!');
+        } else {
+            return view('new_design_form');
+        }
+    }
+
 
     public function posts()
     {
@@ -29,14 +64,27 @@ class ImageController extends Controller
 
     }
 
-    public function destroy(Request $request)
+    public function destroy(Request $request, $idimage = null)
     {
-        $id = $request->get('id');
+        $id = $request->get('id') ?? $idimage;
+        $res = Post::where('id', $id)->pluck('image_name');
+        // We can move the image to a temp folder and delete after 10 days.
+        Storage::delete('public/images/' . $res);
         $res = Post::where('id', $id)->delete();
-        if ($res == 1) {
-            return response()->json(['success' => 'You have successfully delete an image'], 200);
+        if ($idimage == null) {
+            if ($res == 1) {
+                return response()->json(['success' => 'You have successfully delete an image'], 200);
+            } else {
+                return response()->json(['error' => 'Can\'t delete the Image'], 500);
+            }
         } else {
-            return response()->json(['error' => 'Can\'t delete the Image'], 500);
+            $message = 'Can\'t delete the Image';
+            if ($res == 1) {
+                $message = 'You have successfully delete an image';
+            }
+            $request->session()->flash('message.level', 'warning');
+            $request->session()->flash('message.content', $message);
+            return redirect('newdesign')->with('success', $message);
         }
     }
 
@@ -102,4 +150,3 @@ class ImageController extends Controller
     }
 
 }
-
