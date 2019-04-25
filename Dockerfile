@@ -1,7 +1,13 @@
 #start with our base image (the foundation) - version 7.1.5
 FROM php:7.1.5-apache
+RUN echo 'Acquire::Check-Valid-Until no;' > /etc/apt/apt.conf.d/99no-check-valid-until
 
-#install all the system dependencies and enable PHP modules 
+RUN echo "deb [check-valid-until=no] http://cdn-fastly.deb.debian.org/debian jessie main" > /etc/apt/sources.list.d/jessie.list
+RUN echo "deb [check-valid-until=no] http://archive.debian.org/debian jessie-backports main" > /etc/apt/sources.list.d/jessie-backports.list
+RUN sed -i '/deb http:\/\/deb.debian.org\/debian jessie-updates main/d' /etc/apt/sources.list
+RUN apt-get -o Acquire::Check-Valid-Until=false update
+
+#install all the system dependencies and enable PHP modules
 RUN apt-get update && apt-get install -y \
       libicu-dev \
       libpq-dev \
@@ -60,4 +66,3 @@ RUN php artisan key:generate
 RUN php artisan migrate
 RUN npm rebuild node-sass
 RUN npm install && npm run dev
-
